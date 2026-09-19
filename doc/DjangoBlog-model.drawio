@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mxfile host="app.diagrams.net" version="26.0.0" type="device">
+  <diagram id="djangoblog-week3-shh" name="DjangoBlog数据模型-宋怀海">
+    <mxGraphModel dx="1800" dy="1400" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="DjangoBlog 数据库与 Model 类图初稿" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=30;fontColor=#203040;" parent="1" vertex="1">
+          <mxGeometry x="60" y="32" width="1680" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="分析对象：liangliangyy/DjangoBlog  |  整理：宋怀海  |  个人分支：shh_branch  |  第3周初稿" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#526274;" parent="1" vertex="1">
+          <mxGeometry x="60" y="82" width="1680" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend" value="图例：空心三角 = 继承  |  实线 = 1:N 关联  |  紫色实线 = N:M 关联  |  PK/FK/UQ = 主键/外键/唯一约束" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#526274;" parent="1" vertex="1">
+          <mxGeometry x="60" y="120" width="1680" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="section_core" value="核心数据模型" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#176987;" parent="1" vertex="1">
+          <mxGeometry x="60" y="145" width="960" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="section_aux" value="辅助配置与运维模型" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#3C7758;" parent="1" vertex="1">
+          <mxGeometry x="1370" y="145" width="360" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="inherit_blog_user" value="继承" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#65758B;strokeWidth=2;endArrow=block;endFill=0;endSize=15;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="BlogUser" target="AbstractUser" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inherit_article" value="继承" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#65758B;strokeWidth=2;endArrow=block;endFill=0;endSize=15;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Article" target="BaseModel" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inherit_category" value="继承" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#65758B;strokeWidth=2;endArrow=block;endFill=0;endSize=15;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Category" target="BaseModel" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inherit_tag" value="继承" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#65758B;strokeWidth=2;endArrow=block;endFill=0;endSize=15;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Tag" target="BaseModel" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inherit_comment" value="继承" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#65758B;strokeWidth=2;endArrow=block;endFill=0;endSize=15;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Comment" target="BaseModel" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="author_article" value="1  -&gt;  0..*  author" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#326B8C;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="BlogUser" target="Article" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="category_article" value="1  -&gt;  0..*  category" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#326B8C;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Category" target="Article" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="article_tag" value="0..*  &lt;-&gt;  0..*  tags" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#7A4E9B;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Article" target="Tag" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="article_comment" value="1  -&gt;  0..*  comments" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#326B8C;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Article" target="Comment" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="author_comment" value="1  -&gt;  0..*  author" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#326B8C;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="BlogUser" target="Comment" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="comment_reaction" value="1  -&gt;  0..*  reactions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#326B8C;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Comment" target="CommentReaction" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_reaction" value="1  -&gt;  0..*  user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#326B8C;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="BlogUser" target="CommentReaction" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="oauth_author" value="1  -&gt;  0..*  |  author: 0..1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#326B8C;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="BlogUser" target="OAuthUser" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="category_parent" value="0..1 parent  /  0..* children" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#B06A2F;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Category" target="Category" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="comment_parent" value="0..1 parent  /  0..* replies" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#B06A2F;strokeWidth=2;endArrow=none;fontFamily=Microsoft YaHei;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" source="Comment" target="Comment" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="AbstractUser" value="&lt;&lt;abstract&gt;&gt;  &lt;b&gt;AbstractUser&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[django.contrib.auth]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E8EDF4;strokeColor=#65758B;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="180" width="340" height="212" as="geometry"/>
+        </mxCell>
+        <mxCell id="AbstractUser_fields" value="+ username : Char(150) {UQ}&lt;br/&gt;+ email : Email(254)&lt;br/&gt;+ password : Char(128)&lt;br/&gt;+ is_active / is_staff : Boolean&lt;br/&gt;+ groups / user_permissions : M2M" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="AbstractUser" vertex="1">
+          <mxGeometry x="0" y="72" width="340" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="BlogUser" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;BlogUser&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[blog_bloguser]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E2F1F4;strokeColor=#176987;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="450" width="340" height="236" as="geometry"/>
+        </mxCell>
+        <mxCell id="BlogUser_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ username : Char(150) {UQ}&lt;br/&gt;+ email : Email(254)&lt;br/&gt;+ nickname : Char(30) {NULL}&lt;br/&gt;+ avatar / signature : Char / Text&lt;br/&gt;+ is_superuser : Boolean" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="BlogUser" vertex="1">
+          <mxGeometry x="0" y="72" width="340" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="OAuthUser" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;OAuthUser&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[oauth_oauthuser]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E2F1F4;strokeColor=#176987;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="720" width="340" height="236" as="geometry"/>
+        </mxCell>
+        <mxCell id="OAuthUser_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ author : BlogUser {FK, NULL}&lt;br/&gt;+ openid : Char(50)&lt;br/&gt;+ nickname : Char(50)&lt;br/&gt;+ type / token : Char {NULL}&lt;br/&gt;+ metadata : Text {NULL}" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="OAuthUser" vertex="1">
+          <mxGeometry x="0" y="72" width="340" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="Links" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;Links&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[blog_links]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E8F3EC;strokeColor=#3C7758;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="990" width="340" height="236" as="geometry"/>
+        </mxCell>
+        <mxCell id="Links_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ name : Char(30) {UQ}&lt;br/&gt;+ link : URL&lt;br/&gt;+ sequence : Integer {UQ}&lt;br/&gt;+ is_enable : Boolean&lt;br/&gt;+ show_type : Char(1)" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="Links" vertex="1">
+          <mxGeometry x="0" y="72" width="340" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="BaseModel" value="&lt;&lt;abstract&gt;&gt;  &lt;b&gt;BaseModel&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[abstract base]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E8EDF4;strokeColor=#65758B;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="470" y="180" width="360" height="156" as="geometry"/>
+        </mxCell>
+        <mxCell id="BaseModel_fields" value="+ created_time : DateTime&lt;br/&gt;+ last_modify_time : DateTime" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="BaseModel" vertex="1">
+          <mxGeometry x="0" y="72" width="360" height="84" as="geometry"/>
+        </mxCell>
+        <mxCell id="Article" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;Article&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[blog_article]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E2F1F4;strokeColor=#176987;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="470" y="390" width="360" height="308" as="geometry"/>
+        </mxCell>
+        <mxCell id="Article_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ title : Char(200)&lt;br/&gt;+ body : Text&lt;br/&gt;+ author : BlogUser {FK}&lt;br/&gt;+ category : Category {FK, NULL}&lt;br/&gt;+ tags : Tag {M2M}&lt;br/&gt;+ type / status : Char&lt;br/&gt;+ comment_enable : Boolean&lt;br/&gt;+ views : PositiveInteger" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="Article" vertex="1">
+          <mxGeometry x="0" y="72" width="360" height="236" as="geometry"/>
+        </mxCell>
+        <mxCell id="Comment" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;Comment&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[comments_comment]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#F0EAF8;strokeColor=#76519A;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="470" y="700" width="360" height="236" as="geometry"/>
+        </mxCell>
+        <mxCell id="Comment_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ body : Text(300)&lt;br/&gt;+ author : BlogUser {FK}&lt;br/&gt;+ article : Article {FK}&lt;br/&gt;+ parent_comment : Comment {FK, NULL}&lt;br/&gt;+ is_enable : Boolean" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="Comment" vertex="1">
+          <mxGeometry x="0" y="72" width="360" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="SideBar" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;SideBar&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[blog_sidebar]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E8F3EC;strokeColor=#3C7758;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="470" y="1010" width="360" height="212" as="geometry"/>
+        </mxCell>
+        <mxCell id="SideBar_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ name : Char(100)&lt;br/&gt;+ content : Text&lt;br/&gt;+ sequence : Integer {UQ}&lt;br/&gt;+ is_enable : Boolean" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="SideBar" vertex="1">
+          <mxGeometry x="0" y="72" width="360" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="Category" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;Category&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[blog_category]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E2F1F4;strokeColor=#176987;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="930" y="180" width="340" height="212" as="geometry"/>
+        </mxCell>
+        <mxCell id="Category_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ name : Char(30) {UQ}&lt;br/&gt;+ parent_category : Category {FK, NULL}&lt;br/&gt;+ slug : Slug(60)&lt;br/&gt;+ index : Integer" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="Category" vertex="1">
+          <mxGeometry x="0" y="72" width="340" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="Tag" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;Tag&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[blog_tag]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E2F1F4;strokeColor=#176987;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="930" y="440" width="340" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="Tag_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ name : Char(30) {UQ}&lt;br/&gt;+ slug : Slug(60) {UQ}" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="Tag" vertex="1">
+          <mxGeometry x="0" y="72" width="340" height="92" as="geometry"/>
+        </mxCell>
+        <mxCell id="CommentReaction" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;CommentReaction&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[comments_commentreaction]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#F0EAF8;strokeColor=#76519A;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="930" y="650" width="340" height="236" as="geometry"/>
+        </mxCell>
+        <mxCell id="CommentReaction_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ comment : Comment {FK}&lt;br/&gt;+ user : BlogUser {FK}&lt;br/&gt;+ reaction_type : Char(10)&lt;br/&gt;+ created_at : DateTime&lt;br/&gt;+ UQ(comment, user, reaction_type)" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="CommentReaction" vertex="1">
+          <mxGeometry x="0" y="72" width="340" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="BlogSettings" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;BlogSettings&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[blog_blogsettings]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E8F3EC;strokeColor=#3C7758;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="930" y="920" width="340" height="236" as="geometry"/>
+        </mxCell>
+        <mxCell id="BlogSettings_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ site_name : Char(200)&lt;br/&gt;+ site_description : Text(1000)&lt;br/&gt;+ open_site_comment : Boolean&lt;br/&gt;+ comment_need_review : Boolean&lt;br/&gt;+ color_scheme : Char(20)" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="BlogSettings" vertex="1">
+          <mxGeometry x="0" y="72" width="340" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="OAuthConfig" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;OAuthConfig&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[oauth_oauthconfig]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E8F3EC;strokeColor=#3C7758;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="1370" y="180" width="360" height="212" as="geometry"/>
+        </mxCell>
+        <mxCell id="OAuthConfig_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ type : Char(10)&lt;br/&gt;+ appkey / appsecret : Char(200)&lt;br/&gt;+ callback_url : Char(200)&lt;br/&gt;+ is_enable : Boolean" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="OAuthConfig" vertex="1">
+          <mxGeometry x="0" y="72" width="360" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="commands" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;commands&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[servermanager_commands]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E8F3EC;strokeColor=#3C7758;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="1370" y="450" width="360" height="212" as="geometry"/>
+        </mxCell>
+        <mxCell id="commands_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ title : Char(300)&lt;br/&gt;+ command : Char(2000)&lt;br/&gt;+ describe : Char(300)&lt;br/&gt;+ creation_time : DateTime" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="commands" vertex="1">
+          <mxGeometry x="0" y="72" width="360" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="EmailSendLog" value="&lt;&lt;model&gt;&gt;  &lt;b&gt;EmailSendLog&lt;/b&gt;  &lt;font color=&quot;#667085&quot;&gt;[servermanager_emailsendlog]&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=72;fillColor=#E8F3EC;strokeColor=#3C7758;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#1F2937;align=left;spacingLeft=10;verticalAlign=middle;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="1370" y="720" width="360" height="212" as="geometry"/>
+        </mxCell>
+        <mxCell id="EmailSendLog_fields" value="+ id : BigAutoField {PK}&lt;br/&gt;+ emailto : Char(300)&lt;br/&gt;+ title : Char(2000)&lt;br/&gt;+ content : Text&lt;br/&gt;+ send_result : Boolean" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="EmailSendLog" vertex="1">
+          <mxGeometry x="0" y="72" width="360" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="analysis_note" value="模型分析结论&lt;br/&gt;1. BlogUser 与 Article、Comment 为一对多；Article 通过自动中间表与 Tag 构成多对多。&lt;br/&gt;2. Category 使用父分类自关联表达层级，Comment 使用父评论自关联表达回复关系，父节点均允许为空。&lt;br/&gt;3. AbstractUser 和 BaseModel 是抽象基类，只提供公共字段，不单独生成数据库表。&lt;br/&gt;4. Links、SideBar、BlogSettings、OAuthConfig、commands、EmailSendLog 主要承担展示、配置和运维职责，彼此没有显式外键。&lt;br/&gt;5. CommentReaction 使用 (comment, user, reaction_type) 组合唯一约束，防止同一用户重复提交同一反应。" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#B8C2CC;strokeWidth=1;align=left;verticalAlign=top;spacingLeft=16;spacingTop=12;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#263445;" parent="1" vertex="1">
+          <mxGeometry x="60" y="1220" width="1670" height="140" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
