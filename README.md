@@ -1,7 +1,8 @@
-# software_work
+# zu1_DjangoBlog
 
 > 《软件工程及方法学》T03 大作业 —— 基于 Django 的博客系统二次开发。
-> 代码托管：GitHub <https://github.com/Tumopooo/software_work>
+> 代码托管：GitHub <https://github.com/Tumopooo/zu1_DjangoBlog>
+> （2026-11-15 由 `software_work` 更名为 `zu1_DjangoBlog`，符合「zu＋组号_项目名」命名规则）
 
 ## 一、项目信息
 
@@ -85,7 +86,7 @@
 ## 五、仓库目录结构
 
 ```text
-software_work/
+zu1_DjangoBlog/
 ├── src/            源代码（按 Django 应用划分）
 ├── doc/            项目文档、过程证据、实验记录
 ├── readme.txt      仓库名片（项目定位 / 组号 / 组员表）
